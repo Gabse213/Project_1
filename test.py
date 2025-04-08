@@ -5,12 +5,12 @@ from my_classes import Subject, Supervisor, Experiment
 if __name__ == "__main__":
 
     # Erstellen eines Leistungstests
-    supervisor = Supervisor("Walter", "Fürst")
+    supervisor = Supervisor("Henry","Hansen","Boss")
     subject = Subject("Heinz", "Blatt", "male", 42)
-    subject.estimate_max_hr()
+    max_hr=estimate_max_hr(42,"m")
 
-    experiment = Experiment("Leistungstest", "2025-04-03", "Walter Fürst")
+    experiment = Experiment("Leistungstest", "2025-04-03", supervisor)
     experiment.add_subject(subject)
-    experiment.add_supervisor(supervisor)
+
 
     print(experiment)
