@@ -1,18 +1,32 @@
 from my_functions import estimate_max_hr
+"""import requests"""
 
 class Person: 
   def __init__(self,first_name, last_name,):
       self.first_name = first_name
       self.last_name = last_name 
 
+"""def put(self):
+        url=http://127.0.0.1:5000
+        data={"first_name":self.first_name}
+        response = requests.post(url, json=data)
+        return response.status_code"""
+
 class Subject(Person):
-  def __init__(self,first_name,last_name, sex, age):
+    def __init__(self,first_name,last_name, sex, age,email):
         super().__init__(first_name, last_name)
         self.sex = sex
         self.age = age
         self.estimate_max_hr =  estimate_max_hr(age, sex)
-  def __str__(self):
-    return f"Subject: {self.first_name} {self.last_name}, Sex: {self.sex}, Age: {self.age}, Max HR: {self.estimate_max_hr}"       
+        self.email=email
+    def __str__(self):
+      return f"Subject: {self.first_name} {self.last_name}, Sex: {self.sex}, Age: {self.age}, Max HR: {self.estimate_max_hr}"       
+
+"""    def update_email(self):
+        url = http://127.0.0.1:5000...."
+        data = {"email": self.email}
+        response = requests.post(url, json=data)
+        return response.status_code"""
 
 class Supervisor(Person):
   def __init__(self,first_name,last_name, rank):
